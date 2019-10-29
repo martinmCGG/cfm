@@ -4,6 +4,9 @@
  * Add +7 because PHP mod is broken on negative numbers
  */
 $dayOfWeek = (date('w')-1 + 7) % 7;
+if (isset($_GET['dayOfWeek']) && (1 <= intval($_GET['dayOfWeek'])) && (intval($_GET['dayOfWeek'] <= 7))) {
+    $dayOfWeek = intval($_GET['dayOfWeek']) - 1;
+}
 $isWeekend = ($dayOfWeek > 4);
 $dayOfWeek = min($dayOfWeek, 4);
 

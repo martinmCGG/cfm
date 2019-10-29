@@ -19,6 +19,15 @@
         echo "<p>It's weekend now, so I'm showing last available lunch menus.</p>";
     }
 
+    echo "<p>Day of week: ";
+    for ($i=1; $i <= 7; $i++) {
+        $current = isset($_GET['dayOfWeek']) && (intval($_GET['dayOfWeek']) == $i);
+        $current && print('<b>');
+        echo '<a href="/?dayOfWeek=' . $i . '">' . $i . '</a> ';
+        $current && print('</b>');
+    }
+    echo "</p>";
+
     foreach($response as $place) {
         echo '<h3><a href="' . $place['href'] . '">' . $place['name'] . '</a></h3>';
         $menu = $place['menu'];
