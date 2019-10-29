@@ -26,6 +26,7 @@
         echo '<a href="/?dayOfWeek=' . $i . '">' . $i . '</a> ';
         $current && print('</b>');
     }
+    echo '<a href="/">automatic</a> ';
     echo "</p>";
 
     foreach($response as $place) {
